@@ -121,20 +121,20 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white scroll-smooth">
       {/* REMOVED OLD FIXED LOGO CONTAINER */}
 
-      {/* INCREASED BANNER PADDING TO PY-5 */}
+      {/* BANNER PADDING REMAINS PY-5 */}
       <div className="bg-[#FF5C4D] text-white py-5 px-3 sm:px-4 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20">
         <div className="flex items-center justify-center relative max-w-7xl mx-auto">
-          {/* Logo Container (Left Aligned) - ADJUSTED PADDING AND IMAGE SIZE */}
+          {/* Logo Container (White Faixa) - REDUCED PADDING TO PY-1 */}
           <a
             href="#"
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-lg px-3 py-1.5 shadow-md transition-all duration-300 hover:scale-[1.02]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-lg px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02]"
           >
             <Image
               src="/mr-logo-dark.png"
               alt="Márcio Rodrigues Farmacêutico Clínico"
-              width={240} // Increased width
-              height={48} // Increased height
-              className="object-contain h-12 w-auto" // Fixed height to h-12 (48px)
+              width={280} // Increased width
+              height={56} // Increased height
+              className="object-contain h-14 w-auto" // Increased height class to h-14 (56px)
               priority
             />
           </a>
