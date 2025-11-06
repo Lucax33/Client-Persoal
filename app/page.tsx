@@ -141,8 +141,8 @@ export default function Home() {
 
         {/* Text Container (Pushed right with padding on mobile, centered on desktop) */}
         <div className="max-w-7xl mx-auto flex items-center">
-          {/* pl-56 (224px) creates space for the logo on mobile, allowing the text to center in the remaining space. sm:pl-0 resets it. */}
-          <div className="text-center w-full pl-56 pr-4 sm:px-6 sm:pl-0">
+          {/* Mobile: flex, justify-center, pl-56, pr-4 to center text in the remaining space. Desktop: sm:text-center, sm:px-6, sm:pl-0 */}
+          <div className="flex justify-center items-center w-full pl-56 pr-4 sm:px-6 sm:pl-0 sm:text-center">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
