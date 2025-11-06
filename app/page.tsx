@@ -224,7 +224,7 @@ export default function Home() {
             <div className="relative px-4 sm:px-0">
               <div className="relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl shadow-[#FF5C4D]/20 hover:shadow-[#FF5C4D]/40 transition-shadow duration-500">
                 <Image
-                  src="/images/marcio-rodrigues-profile.png" // Novo caminho da imagem
+                  src="/images/marcio-rodrigues-profile-v3.jpg" // Novo caminho da imagem
                   alt="Márcio Rodrigues"
                   fill
                   className="object-cover object-top hover:scale-105 transition-transform duration-700"
