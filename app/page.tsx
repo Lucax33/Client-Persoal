@@ -122,11 +122,11 @@ export default function Home() {
       {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
       <div className="bg-[#FF5C4D] text-white py-5 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20 relative">
         
-        {/* Logo Container (Absolute, flush left, NO ROUNDED CORNERS, NO SHADOW ON MOBILE) */}
+        {/* Logo Container (Absolute, flush left, FULL HEIGHT) */}
         <a
           href="#"
-          // Removed rounded corners and shadow on mobile. Added sm:shadow-md for desktop.
-          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white px-3 py-1 z-10 transition-all duration-300 sm:shadow-md"
+          // top-0 h-full ensures the white background covers the orange completely
+          className="absolute left-0 top-0 h-full flex items-center bg-white px-3 z-10 transition-all duration-300 sm:shadow-md"
         >
           <Image
             src="/mr-logo-dark.png"
@@ -139,10 +139,10 @@ export default function Home() {
           />
         </a>
 
-        {/* Text Container (Pushed right on mobile to prevent overlap) */}
+        {/* Text Container (Pushed right with padding on mobile, centered on desktop) */}
         <div className="max-w-7xl mx-auto flex items-center">
-          {/* ml-56 (224px) pushes the text past the logo on mobile. sm:ml-0 resets it for centering on desktop. */}
-          <div className="text-center w-full ml-56 sm:ml-0">
+          {/* pl-56 (224px) creates space for the logo on mobile, allowing the text to center in the remaining space. sm:pl-0 resets it. */}
+          <div className="text-center w-full pl-56 pr-4 sm:px-6 sm:pl-0">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
