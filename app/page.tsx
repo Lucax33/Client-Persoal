@@ -16,8 +16,8 @@ import {
   Navigation,
   Clock,
   Loader2,
-  Swimmer, // Icon for Swimming Athlete
-  Whistle, // Icon for Referee
+  Activity, // Substituído Swimmer por Activity
+  Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -271,9 +271,9 @@ export default function Home() {
               { icon: Award, number: "3x", label: "Campeão Brasileiro" },
               { icon: Target, number: "4x", label: "Campeão Regional" },
               { icon: Globe, number: "2x", label: "Campeão Mundial" },
-              { icon: Swimmer, number: "Atleta", label: "Natação" },
-              { icon: Whistle, number: "Árbitro", label: "Atletismo" },
-              { icon: Whistle, number: "Árbitro", label: "Natação" },
+              { icon: Activity, number: "Atleta", label: "Natação" }, // Usando Activity
+              { icon: Gavel, number: "Árbitro", label: "Atletismo" }, // Usando Gavel
+              { icon: Gavel, number: "Árbitro", label: "Natação" }, // Usando Gavel
             ].map((item, index) => (
               <Card
                 key={index}
