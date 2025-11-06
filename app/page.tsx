@@ -119,25 +119,30 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
-      <div
-        className={`fixed top-2 sm:top-2 left-2 sm:left-4 z-50 transition-all duration-300 ${
-          isScrolled ? "scale-90 opacity-90" : "scale-100 opacity-100"
-        }`}
-      >
-        <div className="relative group">
-          {/* Logo backdrop - smaller and more subtle */}
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/10 group-hover:border-[#FF5C4D]/50 transition-all duration-300 group-hover:bg-black/70 shadow-lg" />
+      {/* REMOVED OLD FIXED LOGO CONTAINER */}
 
-          {/* Logo container - compact size to fit in banner */}
-          
+      <div className="bg-[#FF5C4D] text-white py-2.5 sm:py-3.5 px-3 sm:px-4 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20">
+        <div className="flex items-center justify-center relative max-w-7xl mx-auto">
+          {/* Logo Container (Left Aligned) */}
+          <a href="#" className="absolute left-0 top-1/2 -translate-y-1/2 h-full flex items-center">
+            <Image
+              src="/mr-logo-dark.png"
+              alt="Márcio Rodrigues Farmacêutico Clínico"
+              width={180} // Adjusted width for better fit
+              height={40} // Adjusted height for better fit
+              className="object-contain h-8 sm:h-10 w-auto transition-transform duration-300 hover:scale-105"
+              priority
+            />
+          </a>
+
+          {/* Centered Text */}
+          <div className="text-center">
+            <span className="hidden sm:inline">
+              🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
+            </span>
+            <span className="sm:hidden">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
+          </div>
         </div>
-      </div>
-
-      <div className="bg-[#FF5C4D] text-white py-2.5 sm:py-3.5 px-3 sm:px-4 text-center font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20">
-        <span className="hidden sm:inline">
-          🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
-        </span>
-        <span className="sm:hidden">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
       </div>
 
       <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
