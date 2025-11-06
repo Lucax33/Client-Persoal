@@ -20,7 +20,7 @@ import {
   Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react" // <-- Corrigido: Sintaxe de importação correta
+import { useState, useEffect } from "react"
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -70,7 +70,7 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev: number) => (prev + 1) % testimonials.length) // <-- Corrigido: Tipagem explícita
+      setCurrentTestimonial((prev: number) => (prev + 1) % testimonials.length)
     }, 5000)
 
     return () => clearInterval(interval)
@@ -98,11 +98,11 @@ export default function Home() {
   }, [])
 
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev: number) => (prev + 1) % testimonials.length) // <-- Corrigido: Tipagem explícita
+    setCurrentTestimonial((prev: number) => (prev + 1) % testimonials.length)
   }
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev: number) => (prev - 1 + testimonials.length) % testimonials.length) // <-- Corrigido: Tipagem explícita
+    setCurrentTestimonial((prev: number) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
   const openCheckout = (e: React.MouseEvent, url?: string) => {
@@ -122,18 +122,19 @@ export default function Home() {
       {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
       <div className="bg-[#FF5C4D] text-white py-5 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20 relative">
         
-        {/* Logo Container (Absolute, flush left) */}
+        {/* Logo Container (Absolute, flush left, NO ROUNDED CORNERS) */}
         <a
           href="#"
-          // Positioned absolutely to the left edge of the viewport
-          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-r-lg rounded-l-none px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02] z-10"
+          // Removed rounded-r-lg rounded-l-none
+          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02] z-10"
         >
           <Image
             src="/mr-logo-dark.png"
             alt="Márcio Rodrigues Farmacêutico Clínico"
             width={280}
             height={56}
-            className="object-contain h-14 w-auto"
+            // Reduced height on mobile (h-10) and kept h-14 for sm: and up
+            className="object-contain h-10 sm:h-14 w-auto"
             priority
           />
         </a>
