@@ -235,10 +235,10 @@ export default function Home() {
 
             <div className="space-y-4 sm:space-y-6 px-4 sm:px-0">
               <p className="text-white/90 text-base sm:text-lg leading-relaxed hover:text-white transition-colors">
-                <strong className="text-[#FF5C4D]">Dr. Márcio Rodrigues</strong> é um Farmacêutico Clínico e Consultor de Performance, com uma formação acadêmica de elite focada em resultados.
+                <strong className="text-[#FF5C4D]">Dr. Márcio Rodrigues</strong> é um Farmacêutico Clínico e Consultor de Performance, reconhecido por sua abordagem científica e foco em resultados de alta performance.
               </p>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
-                <strong className="text-[#FF5C4D]">Doutor e Mestre</strong> pela Universidade Federal de Minas Gerais (UFMG) 🧠 e <strong className="text-[#FF5C4D]">Formado em Química</strong> pela UFJF ⚗️.
+                Sua formação inclui <strong className="text-[#FF5C4D]">Doutorado e Mestrado</strong> pela Universidade Federal de Minas Gerais (UFMG), além de ser <strong className="text-[#FF5C4D]">Formado em Química</strong> pela UFJF.
               </p>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
                 É <strong className="text-[#FF5C4D]">Especialista em Endocrinologia e Metabologia</strong> Aplicada à Performance e Saúde.
