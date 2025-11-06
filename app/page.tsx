@@ -224,10 +224,10 @@ export default function Home() {
             <div className="relative px-4 sm:px-0">
               <div className="relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl shadow-[#FF5C4D]/20 hover:shadow-[#FF5C4D]/40 transition-shadow duration-500">
                 <Image
-                  src="/images/design-mode/29372d8191594f9dbd0ced4aab4dce59.jpeg"
+                  src="/images/marcio-rodrigues-profile.png" // Novo caminho da imagem
                   alt="Márcio Rodrigues"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-[#FF5C4D] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg shadow-[#FF5C4D]/50 animate-bounce">
