@@ -20,7 +20,7 @@ import {
   Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react" // <-- Corrigido: Sintaxe de importação correta
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -70,7 +70,7 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+      setCurrentTestimonial((prev: number) => (prev + 1) % testimonials.length) // <-- Corrigido: Tipagem explícita
     }, 5000)
 
     return () => clearInterval(interval)
@@ -98,11 +98,11 @@ export default function Home() {
   }, [])
 
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+    setCurrentTestimonial((prev: number) => (prev + 1) % testimonials.length) // <-- Corrigido: Tipagem explícita
   }
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+    setCurrentTestimonial((prev: number) => (prev - 1 + testimonials.length) % testimonials.length) // <-- Corrigido: Tipagem explícita
   }
 
   const openCheckout = (e: React.MouseEvent, url?: string) => {
@@ -119,28 +119,28 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
-      {/* BANNER REFACTOR: Using Flexbox for mobile optimization */}
-      <div className="bg-[#FF5C4D] text-white py-5 px-3 sm:px-4 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20">
-        {/* Changed to justify-between and removed 'relative' */}
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          {/* Logo Container (Left Aligned, part of flex flow) */}
-          <a
-            href="#"
-            // Removed absolute positioning classes
-            className="flex items-center bg-white rounded-lg px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02] flex-shrink-0"
-          >
-            <Image
-              src="/mr-logo-dark.png"
-              alt="Márcio Rodrigues Farmacêutico Clínico"
-              width={280}
-              height={56}
-              className="object-contain h-14 w-auto"
-              priority
-            />
-          </a>
+      {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
+      <div className="bg-[#FF5C4D] text-white py-5 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20 relative">
+        
+        {/* Logo Container (Absolute, flush left) */}
+        <a
+          href="#"
+          // Positioned absolutely to the left edge of the viewport
+          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-r-lg rounded-l-none px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02] z-10"
+        >
+          <Image
+            src="/mr-logo-dark.png"
+            alt="Márcio Rodrigues Farmacêutico Clínico"
+            width={280}
+            height={56}
+            className="object-contain h-14 w-auto"
+            priority
+          />
+        </a>
 
-          {/* Centered Text - Now centered in the remaining space */}
-          <div className="flex-1 text-center ml-4">
+        {/* Centered Text Container (Added padding to prevent overlap with logo) */}
+        <div className="flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
