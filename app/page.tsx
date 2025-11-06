@@ -145,7 +145,7 @@ export default function Home() {
             src="/images/design-mode/Gemini_Generated_Image_ur7fnxur7fnxur7f.png"
             alt="Background"
             fill
-            className="object-cover opacity-40 scale-105 animate-[zoom_20s_ease-in-out_infinite_alternate]"
+            className="object-cover opacity-50 scale-105 animate-[zoom_20s_ease-in-out_infinite_alternate]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
