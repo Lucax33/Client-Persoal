@@ -139,14 +139,18 @@ export default function Home() {
           />
         </a>
 
-        {/* Text Container (Pushed right with padding on mobile, centered on desktop) */}
-        <div className="max-w-7xl mx-auto flex items-center">
-          {/* Mobile: flex, justify-center, pl-56, pr-4 to center text in the remaining space. Desktop: sm:text-center, sm:px-6, sm:pl-0 */}
-          <div className="flex justify-center items-center w-full pl-56 pr-4 sm:px-6 sm:pl-0 sm:text-center">
+        {/* Text Container (Ensuring text never overlaps the logo) */}
+        <div className="max-w-7xl mx-auto flex items-center h-full">
+          
+          {/* Spacer for Logo on Mobile (w-56 = pl-56) - Hidden on Desktop (sm:hidden) */}
+          <div className="w-56 flex-shrink-0 sm:hidden" />
+
+          {/* Text Content - Occupies remaining space, centered on mobile, centered on desktop */}
+          <div className="flex-1 flex justify-center items-center px-4 sm:px-6 sm:text-center">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
-            <span className="sm:hidden">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
+            <span className="sm:hidden text-center">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
           </div>
         </div>
       </div>
