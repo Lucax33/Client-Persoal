@@ -122,11 +122,11 @@ export default function Home() {
       {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
       <div className="bg-[#FF5C4D] text-white py-5 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20 relative">
         
-        {/* Logo Container (Absolute, flush left, NO ROUNDED CORNERS) */}
+        {/* Logo Container (Absolute, flush left, NO ROUNDED CORNERS, NO SHADOW ON MOBILE) */}
         <a
           href="#"
-          // Removed rounded-r-lg rounded-l-none
-          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02] z-10"
+          // Removed rounded corners and shadow on mobile. Added sm:shadow-md for desktop.
+          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white px-3 py-1 z-10 transition-all duration-300 sm:shadow-md"
         >
           <Image
             src="/mr-logo-dark.png"
@@ -139,9 +139,10 @@ export default function Home() {
           />
         </a>
 
-        {/* Centered Text Container (Added padding to prevent overlap with logo) */}
-        <div className="flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center">
+        {/* Text Container (Pushed right on mobile to prevent overlap) */}
+        <div className="max-w-7xl mx-auto flex items-center">
+          {/* ml-56 (224px) pushes the text past the logo on mobile. sm:ml-0 resets it for centering on desktop. */}
+          <div className="text-center w-full ml-56 sm:ml-0">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
