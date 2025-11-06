@@ -119,28 +119,28 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
-      {/* REMOVED OLD FIXED LOGO CONTAINER */}
-
-      {/* BANNER PADDING REMAINS PY-5 */}
+      {/* BANNER REFACTOR: Using Flexbox for mobile optimization */}
       <div className="bg-[#FF5C4D] text-white py-5 px-3 sm:px-4 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20">
-        <div className="flex items-center justify-center relative max-w-7xl mx-auto">
-          {/* Logo Container (White Faixa) - REDUCED PADDING TO PY-1 */}
+        {/* Changed to justify-between and removed 'relative' */}
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          {/* Logo Container (Left Aligned, part of flex flow) */}
           <a
             href="#"
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-lg px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02]"
+            // Removed absolute positioning classes
+            className="flex items-center bg-white rounded-lg px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02] flex-shrink-0"
           >
             <Image
               src="/mr-logo-dark.png"
               alt="Márcio Rodrigues Farmacêutico Clínico"
-              width={280} // Increased width
-              height={56} // Increased height
-              className="object-contain h-14 w-auto" // Increased height class to h-14 (56px)
+              width={280}
+              height={56}
+              className="object-contain h-14 w-auto"
               priority
             />
           </a>
 
-          {/* Centered Text */}
-          <div className="text-center">
+          {/* Centered Text - Now centered in the remaining space */}
+          <div className="flex-1 text-center ml-4">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
