@@ -123,14 +123,17 @@ export default function Home() {
 
       <div className="bg-[#FF5C4D] text-white py-2.5 sm:py-3.5 px-3 sm:px-4 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20">
         <div className="flex items-center justify-center relative max-w-7xl mx-auto">
-          {/* Logo Container (Left Aligned) */}
-          <a href="#" className="absolute left-0 top-1/2 -translate-y-1/2 h-full flex items-center">
+          {/* Logo Container (Left Aligned) - NOW WITH WHITE BACKGROUND */}
+          <a
+            href="#"
+            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-lg px-3 py-1 shadow-md transition-all duration-300 hover:scale-[1.02]"
+          >
             <Image
               src="/mr-logo-dark.png"
               alt="Márcio Rodrigues Farmacêutico Clínico"
               width={180} // Adjusted width for better fit
               height={40} // Adjusted height for better fit
-              className="object-contain h-8 sm:h-10 w-auto transition-transform duration-300 hover:scale-105"
+              className="object-contain h-8 sm:h-10 w-auto"
               priority
             />
           </a>
