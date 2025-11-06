@@ -20,9 +20,7 @@ import {
   Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react"
-
-export default function Home() {
+import { useState, useEffect } => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [checkoutUrl, setCheckoutUrl] = useState("https://app.primecoaching.com.br/checkout/11285")
@@ -146,11 +144,12 @@ export default function Home() {
           <div className="w-56 flex-shrink-0 sm:hidden" />
 
           {/* Text Content - Occupies remaining space, centered on mobile, centered on desktop */}
-          {/* Removed px-4 on mobile to allow full expansion to the right edge */}
-          <div className="flex-1 flex justify-center items-center sm:px-6 sm:text-center">
+          {/* Added px-2 for subtle breathing room on mobile, and text-center for perfect centering */}
+          <div className="flex-1 flex justify-center items-center px-2 sm:px-6 sm:text-center">
             <span className="hidden sm:inline">
               🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
             </span>
+            {/* Text for mobile is now centered in the remaining space */}
             <span className="sm:hidden text-center">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
           </div>
         </div>
