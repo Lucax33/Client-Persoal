@@ -20,7 +20,9 @@ import {
   Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } => {
+import { useState, useEffect } from "react" // CORRIGIDO AQUI
+
+export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [checkoutUrl, setCheckoutUrl] = useState("https://app.primecoaching.com.br/checkout/11285")
