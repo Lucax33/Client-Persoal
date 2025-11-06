@@ -229,25 +229,26 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-[#FF5C4D] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm shadow-lg shadow-[#FF5C4D]/50 animate-bounce">
-                +15 ANOS DE EXPERIÊNCIA
+                +20 ANOS DE EXPERIÊNCIA
               </div>
             </div>
 
             <div className="space-y-4 sm:space-y-6 px-4 sm:px-0">
-              <p className="text-white/90 text-base sm:text-lg leading-relaxed hover:text-white transition-colors">
-                <strong className="text-[#FF5C4D]">Dr. Márcio Rodrigues</strong> é um Farmacêutico Clínico e Consultor de Performance, reconhecido por sua abordagem científica e foco em resultados de alta performance.
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">Dr. Márcio Rodrigues</h3>
+              <p className="text-[#FF5C4D] text-base sm:text-lg font-semibold">
+                Farmacêutico Clínico • Especialista em Saúde, Performance e Longevidade
               </p>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
-                Sua formação inclui <strong className="text-[#FF5C4D]">Doutorado e Mestrado</strong> pela Universidade Federal de Minas Gerais (UFMG), além de ser <strong className="text-[#FF5C4D]">Formado em Química</strong> pela UFJF.
+                Com mais de <strong className="text-[#FF5C4D]">20 anos de experiência</strong> na área de Educação Física e Ciências da Saúde, o Dr. Márcio Rodrigues construiu uma trajetória marcada pela união entre ciência, prática clínica e resultados reais.
               </p>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
-                É <strong className="text-[#FF5C4D]">Especialista em Endocrinologia e Metabologia</strong> Aplicada à Performance e Saúde.
+                É formado em Química e Farmácia, com pós-graduação em Fisiologia do Exercício, Farmácia Clínica e Reprodução Humana Assistida. Além disso, é <strong className="text-[#FF5C4D]">Mestre e Doutor</strong> pela Universidade Federal de Minas Gerais (UFMG), uma das instituições mais respeitadas do país.
               </p>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
-                Com mais de uma década de experiência clínica, Dr. Márcio é referência em otimização hormonal, emagrecimento e hipertrofia — unindo ciência e resultado real.
+                Ao longo de sua carreira, já acompanhou e transformou mais de <strong className="text-[#FF5C4D]">3 mil vidas</strong>, aplicando uma abordagem personalizada, científica e humanizada para promover saúde, performance e qualidade de vida.
               </p>
-              <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
-                Seu método combina avaliação metabólica detalhada, ajuste preciso de hormônios e nutrientes e planejamento personalizado para transformar corpo, mente e energia.
+              <p className="text-white/70 text-xs sm:text-sm font-mono pt-2">
+                📋 RQE 18049-10
               </p>
             </div>
           </div>
