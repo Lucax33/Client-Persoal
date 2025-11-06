@@ -159,7 +159,7 @@ export default function Home() {
               TRANSFORME SEU <span className="text-[#FF5C4D]">CORPO</span> COM CIÊNCIA, TÉCNICA E RESULTADOS REAIS
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed text-pretty animate-[slideUp_1s_ease-out]">
-              Mais de 700 vidas transformadas através de um método científico comprovado. Chegou a sua vez de alcançar o
+              Mais de 3 mil vidas transformadas através de um método científico comprovado. Chegou a sua vez de alcançar o
               corpo que você sempre quis.
             </p>
             <button
