@@ -260,9 +260,12 @@ export default function Home() {
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
                 Ao longo de sua carreira, já acompanhou e transformou mais de <strong className="text-[#FF5C4D]">3 mil vidas</strong>, aplicando uma abordagem personalizada, científica e humanizada para promover saúde, performance e qualidade de vida.
               </p>
-              <p className="text-white/70 text-xs sm:text-sm font-mono pt-2">
-                📋 RQE 18049-10
-              </p>
+              {/* RQE Badge - UI/UX ENHANCEMENT */}
+              <div className="pt-2">
+                <span className="inline-block bg-zinc-800/50 border border-[#FF5C4D]/50 text-[#FF5C4D] px-3 py-1 rounded-full font-bold text-xs sm:text-sm shadow-lg shadow-[#FF5C4D]/10 transition-all hover:scale-[1.02]">
+                  📋 RQE 18049-10
+                </span>
+              </div>
             </div>
           </div>
         </div>
