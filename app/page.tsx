@@ -284,9 +284,9 @@ export default function Home() {
                     
                     {/* Imagem do Certificado */}
                     <div className="relative w-full max-w-[300px] aspect-[4/3] flex-shrink-0">
-                        {/* CORREÇÃO: Trocado para <img> para garantir o carregamento e evitar problemas de cache do Next.js Image */}
+                        {/* CORREÇÃO FINAL: Usando URL externa para garantir o carregamento */}
                         <img
-                            src="/images/certificado-sbp.png"
+                            src="https://i.imgur.com/KtUfHWT.png"
                             alt="Certificado Sociedade Brasileira de Personal"
                             className="object-contain rounded-lg shadow-2xl shadow-black/50 border-2 border-white/10 w-full h-full"
                             style={{ objectFit: 'contain' }}
