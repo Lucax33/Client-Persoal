@@ -324,7 +324,7 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* UI/UX REFACTOR: Layout ajustado para 4 colunas no máximo (lg:grid-cols-4) e cor de fundo do card ajustada para bg-zinc-900 */}
+          {/* Cards de Conquistas com borda tracejada */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
             {[
               { icon: Trophy, number: "15", label: "Anos de boxe" },
@@ -337,7 +337,8 @@ export default function Home() {
             ].map((item, index) => (
               <Card
                 key={index}
-                className="bg-zinc-900 border-[#FF5C4D]/20 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
+                // Adicionado border-dashed
+                className="bg-zinc-900 border-dashed border-2 border-[#FF5C4D]/30 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
               >
                 <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#FF5C4D] mx-auto mb-2 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
                 <div className="text-xl sm:text-3xl font-bold text-[#FF5C4D] mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
@@ -478,7 +479,7 @@ export default function Home() {
                 className={`relative flex flex-col h-full ${
                   plan.highlight
                     ? "bg-gradient-to-br from-[#FF5C4D] to-[#FF5C4D]/80 border-[#FF5C4D] scale-105 shadow-2xl shadow-[#FF5C4D]/50"
-                    : "bg-black border-[#FF5C4D]/30"
+                    : "bg-black border-dashed border-2 border-[#FF5C4D]/30" // Adicionado border-dashed
                 } p-6 sm:p-8 rounded-xl sm:rounded-2xl hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer group`}
               >
                 {plan.badge && (
@@ -564,6 +565,7 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Card de Agendamento com borda tracejada */}
             <Card className="bg-gradient-to-br from-zinc-950 to-black border-[#FF5C4D]/30 p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-2xl shadow-[#FF5C4D]/10 border-dashed border-2 hover:border-[#FF5C4D]/50 transition-all duration-500">
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <div className="space-y-4 sm:space-y-6">
