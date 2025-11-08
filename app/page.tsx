@@ -280,11 +280,11 @@ export default function Home() {
                     <h3 className="text-2xl sm:text-3xl font-bold text-[#FF5C4D]">COMPROMISSO COM A EXCELÊNCIA</h3>
                     <p className="text-white/70 mt-2 text-sm sm:text-base">Sua saúde e performance são garantidas por certificações de alto nível.</p>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-zinc-900/50 rounded-xl">
+                {/* UI/UX REFACTOR: Aplicando estilo de card/modal destacado */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 p-8 bg-zinc-900 rounded-2xl border border-white/10 shadow-2xl shadow-black/70">
                     
                     {/* Imagem do Certificado */}
                     <div className="relative w-full max-w-[300px] aspect-[4/3] flex-shrink-0">
-                        {/* CORREÇÃO FINAL: Usando URL externa para garantir o carregamento */}
                         <img
                             src="https://i.imgur.com/KtUfHWT.png"
                             alt="Certificado Sociedade Brasileira de Personal"
