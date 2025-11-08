@@ -12,7 +12,7 @@ import {
   Calendar,
   MessageCircle,
   X,
-  MapPin,
+  MapPin, // Usando MapPin para o atendimento presencial
   Navigation,
   Clock,
   Loader2,
@@ -370,15 +370,18 @@ export default function Home() {
               </div>
             </Card>
 
+            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO */}
             <Card className="bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer">
               <div className="space-y-3 sm:space-y-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  🤝
+                  <MapPin className="h-8 w-8 text-[#FF5C4D]" /> {/* Novo ícone */}
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">PRESENCIAL</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold">ATENDIMENTO PRESENCIAL</h3>
                 <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
-                  Sessões presenciais com avaliações físicas completas, ajustes em tempo real e acompanhamento
-                  personalizado no treino.
+                  Sessões presenciais de elite no **Spa Serra** (Sete Lagoas/MG). Avaliações físicas completas, ajustes em tempo real e acompanhamento personalizado no treino.
+                </p>
+                <p className="text-white/70 text-xs sm:text-sm font-semibold pt-2">
+                  📍 Local: Spa Serra - Av. Pref. Alberto Moura, 15671A
                 </p>
               </div>
             </Card>
