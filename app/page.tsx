@@ -324,7 +324,8 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-6 max-w-7xl mx-auto">
+          {/* UI/UX REFACTOR: Layout ajustado para 4 colunas no máximo (lg:grid-cols-4) e cor de fundo do card ajustada para bg-zinc-900 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
             {[
               { icon: Trophy, number: "15", label: "Anos de boxe" },
               { icon: Award, number: "3x", label: "Campeão Brasileiro" },
@@ -336,7 +337,7 @@ export default function Home() {
             ].map((item, index) => (
               <Card
                 key={index}
-                className="bg-black border-[#FF5C4D]/20 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
+                className="bg-zinc-900 border-[#FF5C4D]/20 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
               >
                 <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#FF5C4D] mx-auto mb-2 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
                 <div className="text-xl sm:text-3xl font-bold text-[#FF5C4D] mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
@@ -374,7 +375,7 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL COM LINK CORRIGIDO */}
+            {/* CARD DE ATENDIMENTO PRESENCIAL */}
             <Card 
               className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
             >
@@ -387,7 +388,7 @@ export default function Home() {
                   Sessões presenciais exclusivas no <span className="font-bold text-white">Spa Serra</span> (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
                 </p>
                 
-                {/* BOTÃO BOUNCING COM LINK CORRIGIDO */}
+                {/* BOTÃO BOUNCING */}
                 <div className="pt-4">
                   <a
                     href={mapsDestinationUrl}
