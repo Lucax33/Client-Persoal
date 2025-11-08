@@ -280,7 +280,7 @@ export default function Home() {
                     <h3 className="text-2xl sm:text-3xl font-bold text-[#FF5C4D]">COMPROMISSO COM A EXCELÊNCIA</h3>
                     <p className="text-white/70 mt-2 text-sm sm:text-base">Sua saúde e performance são garantidas por certificações de alto nível.</p>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-zinc-900/50 border border-[#FF5C4D]/30 rounded-xl shadow-2xl shadow-black/50">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-zinc-900/50 rounded-xl">
                     
                     {/* Imagem do Certificado */}
                     <div className="relative w-full max-w-[300px] aspect-[4/3] flex-shrink-0">
