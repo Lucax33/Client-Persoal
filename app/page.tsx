@@ -20,7 +20,7 @@ import {
   Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
-import { useState, useEffect } from "react" // CORRIGIDO AQUI
+import { useState, useEffect } from "react"
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -273,80 +273,40 @@ export default function Home() {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-zinc-950">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
-              <span className="text-[#FF5C4D]">CONQUISTAS</span> QUE INSPIRAM
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-6 max-w-7xl mx-auto">
-            {[
-              { icon: Trophy, number: "15", label: "Anos de boxe" },
-              { icon: Award, number: "3x", label: "Campeão Brasileiro" },
-              { icon: Target, number: "4x", label: "Campeão Regional" },
-              { icon: Globe, number: "2x", label: "Campeão Mundial" },
-              { icon: Activity, number: "Atleta", label: "Natação" }, // Usando Activity
-              { icon: Gavel, number: "Árbitro", label: "Atletismo" }, // Usando Gavel
-              { icon: Gavel, number: "Árbitro", label: "Natação" }, // Usando Gavel
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="bg-black border-[#FF5C4D]/20 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
-              >
-                <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#FF5C4D] mx-auto mb-2 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                <div className="text-xl sm:text-3xl font-bold text-[#FF5C4D] mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  {item.number}
+            
+            {/* NOVO BLOCO DE CERTIFICAÇÃO PARA CONFIANÇA E SEGURANÇA */}
+            <div className="md:col-span-2 pt-10">
+                <div className="text-center mb-8">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#FF5C4D]">COMPROMISSO COM A EXCELÊNCIA</h3>
+                    <p className="text-white/70 mt-2 text-sm sm:text-base">Sua saúde e performance são garantidas por certificações de alto nível.</p>
                 </div>
-                <div className="text-xs sm:text-sm text-white/70 uppercase tracking-wide">{item.label}</div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-black">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
-              ATENDIMENTO <span className="text-[#FF5C4D]">PERSONALIZADO</span>
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
-              Escolha o formato que melhor se adapta à sua rotina
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4 sm:px-0">
-            <Card className="bg-white text-black p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  💻
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-zinc-900/50 border border-[#FF5C4D]/30 rounded-xl shadow-2xl shadow-black/50">
+                    
+                    {/* Imagem do Certificado */}
+                    <div className="relative w-full max-w-[300px] aspect-[4/3] flex-shrink-0">
+                        <Image
+                            src="/images/certificado-sbp.jpg"
+                            alt="Certificado Sociedade Brasileira de Personal"
+                            fill
+                            className="object-contain rounded-lg shadow-2xl shadow-black/50 border-2 border-white/10"
+                        />
+                    </div>
+                    
+                    {/* Copy de Confiança */}
+                    <div className="text-center sm:text-left space-y-3">
+                        <div className="flex items-center justify-center sm:justify-start gap-2">
+                            <Award className="h-6 w-6 text-[#FF5C4D] flex-shrink-0" />
+                            <p className="text-lg font-bold text-white">Certificado pela Sociedade Brasileira de Personal</p>
+                        </div>
+                        <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                            O Dr. Márcio Rodrigues é um profissional certificado, garantindo que seu acompanhamento segue os mais rigorosos padrões de qualidade e ciência do treinamento físico no Brasil.
+                        </p>
+                        <p className="text-[#FF5C4D] font-semibold text-sm">
+                            Treine com segurança, treine com quem tem credibilidade.
+                        </p>
+                    </div>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">CONSULTORIA ONLINE</h3>
-                <p className="text-black/70 text-sm sm:text-lg leading-relaxed">
-                  Acompanhamento remoto completo com ajustes semanais de treino, dieta e suplementação. Atendimento via
-                  WhatsApp com resposta em até 24h.
-                </p>
-              </div>
-            </Card>
-
-            <Card className="bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  🤝
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">PRESENCIAL</h3>
-                <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
-                  Sessões presenciais com avaliações físicas completas, ajustes em tempo real e acompanhamento
-                  personalizado no treino.
-                </p>
-              </div>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -364,6 +324,22 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {[
+              // 1. Acompanhamento Farmacoterapêutico (R$ 130) - Menor preço absoluto
+              {
+                icon: "💊",
+                title: "Acompanhamento Farmacoterapêutico",
+                price: "130",
+                period: "/consulta",
+                features: [
+                  "Análise de medicamentos",
+                  "Otimização do tratamento",
+                  "Redução de riscos",
+                  "Consulta individual",
+                ],
+                url: "https://pay.primecoaching.com.br/c/965ca19842900277ccbdca710821968b6d83b279",
+                highlight: false,
+              },
+              // 2. Plano Mensal (R$ 200)
               {
                 icon: "📅",
                 title: "Plano Mensal",
@@ -373,6 +349,17 @@ export default function Home() {
                 url: "https://app.primecoaching.com.br/checkout/plan/21482",
                 highlight: false,
               },
+              // 3. Plano Semestral (R$ 700)
+              {
+                icon: "📆",
+                title: "Plano Semestral",
+                price: "700",
+                period: "/6 meses",
+                features: ["Tudo do plano mensal", "Economia de 42%", "Suporte prioritário", "Avaliações bimestrais"],
+                url: "https://app.primecoaching.com.br/checkout/plan/21868",
+                highlight: false,
+              },
+              // 4. Plano Anual (R$ 1.000) - Maior preço absoluto, mas melhor custo-benefício (mantido como destaque)
               {
                 icon: "🏆",
                 title: "Plano Anual",
@@ -388,29 +375,6 @@ export default function Home() {
                 url: "https://app.primecoaching.com.br/checkout/plan/21869",
                 highlight: true,
                 badge: "MAIS POPULAR",
-              },
-              {
-                icon: "📆",
-                title: "Plano Semestral",
-                price: "700",
-                period: "/6 meses",
-                features: ["Tudo do plano mensal", "Economia de 42%", "Suporte prioritário", "Avaliações bimestrais"],
-                url: "https://app.primecoaching.com.br/checkout/plan/21868",
-                highlight: false,
-              },
-              {
-                icon: "💊",
-                title: "Acompanhamento Farmacoterapêutico",
-                price: "130",
-                period: "/consulta",
-                features: [
-                  "Análise de medicamentos",
-                  "Otimização do tratamento",
-                  "Redução de riscos",
-                  "Consulta individual",
-                ],
-                url: "https://pay.primecoaching.com.br/c/965ca19842900277ccbdca710821968b6d83b279",
-                highlight: false,
               },
             ].map((plan, index) => (
               <Card
