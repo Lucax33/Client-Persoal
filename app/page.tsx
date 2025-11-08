@@ -263,8 +263,9 @@ export default function Home() {
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
                 Com mais de <strong className="text-[#FF5C4D]">20 anos de experiência</strong> na área de Educação Física e Ciências da Saúde, o Dr. Márcio Rodrigues construiu uma trajetória marcada pela união entre ciência, prática clínica e resultados reais.
               </p>
+              {/* PARÁGRAFO ATUALIZADO */}
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
-                É formado em Química e Farmácia, com pós-graduação em Fisiologia do Exercício, Farmácia Clínica e Reprodução Humana Assistida. Além disso, é <strong className="text-[#FF5C4D]">Mestre e Doutor</strong> pela Universidade Federal de Minas Gerais (UFMG), uma das instituições mais respeitadas do país.
+                Profissional formado em Educação Física, Farmácia e Química, e graduando em Nutrição, unindo ciência e performance para transformar seu corpo com precisão.
               </p>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
                 Ao longo de sua carreira, já acompanhou e transformou mais de <strong className="text-[#FF5C4D]">3 mil vidas</strong>, aplicando uma abordagem personalizada, científica e humanizada para promover saúde, performance e qualidade de vida.
@@ -373,7 +374,7 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO COM BOTÃO BOUNCING E NOVA COPY */}
+            {/* CARD DE ATENDIMENTO PRESENCIAL */}
             <Card 
               className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
             >
