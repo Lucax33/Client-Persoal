@@ -285,7 +285,7 @@ export default function Home() {
                     {/* Imagem do Certificado */}
                     <div className="relative w-full max-w-[300px] aspect-[4/3] flex-shrink-0">
                         <Image
-                            src="/images/certificado-sbp.jpeg" // CORRIGIDO PARA .jpeg
+                            src="/images/certificado-sbp.png" // CORRIGIDO PARA .png
                             alt="Certificado Sociedade Brasileira de Personal"
                             fill
                             className="object-contain rounded-lg shadow-2xl shadow-black/50 border-2 border-white/10"
