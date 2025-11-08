@@ -25,7 +25,6 @@ import { useState, useEffect } from "react"
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isPopupOpen, setIsPopupOpen] = useState(false) // State for Checkout Modal
-  // REMOVIDO: [isLocationModalOpen, setIsLocationModalOpen]
   const [checkoutUrl, setCheckoutUrl] = useState("https://app.primecoaching.com.br/checkout/11285")
   const [isIframeLoading, setIsIframeLoading] = useState(true) // State for iframe loading
   const [isScrolled, setIsScrolled] = useState(false) // State for scroll visibility
@@ -374,10 +373,9 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO COM BOTÃO BOUNCING */}
+            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO COM BOTÃO BOUNCING E NOVA COPY */}
             <Card 
               className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
-              // Removendo o onClick para o modal
             >
               <div className="space-y-3 sm:space-y-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
@@ -385,17 +383,17 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold">ATENDIMENTO PRESENCIAL</h3>
                 <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
-                  Sessões presenciais exclusivas no **Spa Serra** (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
+                  Sessões presenciais exclusivas no <span className="font-bold text-white">Spa Serra</span> (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
                 </p>
                 
-                {/* NOVO BOTÃO BOUNCING */}
+                {/* BOTÃO BOUNCING */}
                 <div className="pt-4">
                   <a
                     href="https://maps.app.goo.gl/pSv16HNW82Fzo9yh8"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-white text-[#FF5C4D] font-bold px-4 py-2 rounded-full text-xs sm:text-sm shadow-lg shadow-black/30 transition-all hover:scale-[1.05] animate-bounce"
-                    onClick={(e) => e.stopPropagation()} // Evita que o clique no botão ative o clique do card (se houver)
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <MapPin className="h-4 w-4" />
                     VER ENDEREÇO (SPA SERRA)
@@ -743,7 +741,6 @@ export default function Home() {
           </div>
         </div>
       )}
-      {/* O NOVO MODAL DE LOCALIZAÇÃO FOI REMOVIDO DAQUI */}
     </div>
   )
 }
