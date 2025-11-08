@@ -118,7 +118,8 @@ export default function Home() {
     setIsIframeLoading(true)
   }
 
-  // openLocationModal e closeLocationModal removidos
+  // URL de destino robusta para rotas no Google Maps
+  const mapsDestinationUrl = "https://www.google.com/maps/dir/?api=1&destination=Av.+Pref.+Alberto+Moura,+15671A,+Portal+da+Serra,+Sete+Lagoas,+MG,+35700-791,+Brazil"
 
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
@@ -263,7 +264,6 @@ export default function Home() {
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
                 Com mais de <strong className="text-[#FF5C4D]">20 anos de experiência</strong> na área de Educação Física e Ciências da Saúde, o Dr. Márcio Rodrigues construiu uma trajetória marcada pela união entre ciência, prática clínica e resultados reais.
               </p>
-              {/* PARÁGRAFO ATUALIZADO */}
               <p className="text-white/80 text-sm sm:text-base leading-relaxed hover:text-white/90 transition-colors">
                 Profissional formado em Educação Física, Farmácia e Química, e graduando em Nutrição, unindo ciência e performance para transformar seu corpo com precisão.
               </p>
@@ -374,7 +374,7 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL */}
+            {/* CARD DE ATENDIMENTO PRESENCIAL COM LINK CORRIGIDO */}
             <Card 
               className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
             >
@@ -387,10 +387,10 @@ export default function Home() {
                   Sessões presenciais exclusivas no <span className="font-bold text-white">Spa Serra</span> (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
                 </p>
                 
-                {/* BOTÃO BOUNCING */}
+                {/* BOTÃO BOUNCING COM LINK CORRIGIDO */}
                 <div className="pt-4">
                   <a
-                    href="https://maps.app.goo.gl/pSv16HNW82Fzo9yh8"
+                    href={mapsDestinationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-white text-[#FF5C4D] font-bold px-4 py-2 rounded-full text-xs sm:text-sm shadow-lg shadow-black/30 transition-all hover:scale-[1.05] animate-bounce"
@@ -685,10 +685,10 @@ export default function Home() {
               </Card>
             </div>
 
-            {/* Button */}
+            {/* Button com LINK CORRIGIDO */}
             <div className="text-center">
               <a
-                href="https://maps.app.goo.gl/pSv16HNW82Fzo9yh8"
+                href={mapsDestinationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-[#FF5C4D] hover:bg-[#FF5C4D]/90 text-white font-bold px-10 py-5 rounded-full transition-all hover:scale-105 shadow-lg shadow-[#FF5C4D]/30 hover:shadow-[#FF5C4D]/50 text-lg focus:outline-none focus:ring-4 focus:ring-white/50"
