@@ -25,7 +25,7 @@ import { useState, useEffect } from "react"
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isPopupOpen, setIsPopupOpen] = useState(false) // State for Checkout Modal
-  const [isLocationModalOpen, setIsLocationModalOpen] = useState(false) // NEW State for Location Modal
+  // REMOVIDO: [isLocationModalOpen, setIsLocationModalOpen]
   const [checkoutUrl, setCheckoutUrl] = useState("https://app.primecoaching.com.br/checkout/11285")
   const [isIframeLoading, setIsIframeLoading] = useState(true) // State for iframe loading
   const [isScrolled, setIsScrolled] = useState(false) // State for scroll visibility
@@ -78,8 +78,8 @@ export default function Home() {
   }, [testimonials.length])
 
   useEffect(() => {
-    // Control body overflow when any modal is open
-    if (isPopupOpen || isLocationModalOpen) {
+    // Control body overflow when the checkout modal is open
+    if (isPopupOpen) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "unset"
@@ -88,7 +88,7 @@ export default function Home() {
     return () => {
       document.body.style.overflow = "unset"
     }
-  }, [isPopupOpen, isLocationModalOpen])
+  }, [isPopupOpen]) // isLocationModalOpen removido
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,15 +119,7 @@ export default function Home() {
     setIsIframeLoading(true)
   }
 
-  // NEW Location Modal Handlers
-  const openLocationModal = (e: React.MouseEvent) => {
-    e.preventDefault()
-    setIsLocationModalOpen(true)
-  }
-
-  const closeLocationModal = () => {
-    setIsLocationModalOpen(false)
-  }
+  // openLocationModal e closeLocationModal removidos
 
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
@@ -382,10 +374,10 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO COM NOVO ONCLICK */}
+            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO COM BOTÃO BOUNCING */}
             <Card 
-              className="bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer"
-              onClick={openLocationModal} // Abre o novo modal de localização
+              className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
+              // Removendo o onClick para o modal
             >
               <div className="space-y-3 sm:space-y-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
@@ -395,9 +387,20 @@ export default function Home() {
                 <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
                   Sessões presenciais exclusivas no **Spa Serra** (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
                 </p>
-                <p className="text-white/70 text-xs sm:text-sm font-semibold pt-2">
-                  Clique para ver o endereço completo
-                </p>
+                
+                {/* NOVO BOTÃO BOUNCING */}
+                <div className="pt-4">
+                  <a
+                    href="https://maps.app.goo.gl/pSv16HNW82Fzo9yh8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-[#FF5C4D] font-bold px-4 py-2 rounded-full text-xs sm:text-sm shadow-lg shadow-black/30 transition-all hover:scale-[1.05] animate-bounce"
+                    onClick={(e) => e.stopPropagation()} // Evita que o clique no botão ative o clique do card (se houver)
+                  >
+                    <MapPin className="h-4 w-4" />
+                    VER ENDEREÇO (SPA SERRA)
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
@@ -740,47 +743,7 @@ export default function Home() {
           </div>
         </div>
       )}
-
-      {/* NOVO MODAL DE LOCALIZAÇÃO (BRANCO) */}
-      {isLocationModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-[fadeIn_0.2s_ease-out]"
-          onClick={closeLocationModal}
-        >
-          <div
-            className="relative w-full max-w-md bg-white text-black p-8 rounded-2xl shadow-2xl shadow-black/50 animate-[scaleUp_0.3s_ease-out]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeLocationModal}
-              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 text-black flex items-center justify-center transition-all duration-200"
-              aria-label="Fechar"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            <div className="text-center space-y-6">
-              <MapPin className="h-10 w-10 text-[#FF5C4D] mx-auto" />
-              <h3 className="text-2xl font-bold text-black">Local de Atendimento Presencial</h3>
-              
-              <div className="bg-gray-100 p-4 rounded-lg border border-gray-200">
-                <p className="text-lg font-semibold text-gray-800">📍 Local: Spa Serra</p>
-                <p className="text-sm text-gray-600 mt-1">Av. Pref. Alberto Moura, 15671A</p>
-              </div>
-
-              <a
-                href="https://maps.app.goo.gl/pSv16HNW82Fzo9yh8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full bg-[#FF5C4D] hover:bg-[#FF5C4D]/90 text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.02] shadow-lg shadow-[#FF5C4D]/30"
-              >
-                <Navigation className="h-5 w-5" />
-                Ver Rota no Google Maps
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* O NOVO MODAL DE LOCALIZAÇÃO FOI REMOVIDO DAQUI */}
     </div>
   )
 }
