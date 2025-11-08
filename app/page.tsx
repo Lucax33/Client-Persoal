@@ -285,7 +285,7 @@ export default function Home() {
                     {/* Imagem do Certificado */}
                     <div className="relative w-full max-w-[300px] aspect-[4/3] flex-shrink-0">
                         <Image
-                            src="/images/certificado-sbp.jpg"
+                            src="/images/certificado-sbp.jpeg" // CORRIGIDO PARA .jpeg
                             alt="Certificado Sociedade Brasileira de Personal"
                             fill
                             className="object-contain rounded-lg shadow-2xl shadow-black/50 border-2 border-white/10"
@@ -315,6 +315,80 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
+              <span className="text-[#FF5C4D]">CONQUISTAS</span> QUE INSPIRAM
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-6 max-w-7xl mx-auto">
+            {[
+              { icon: Trophy, number: "15", label: "Anos de boxe" },
+              { icon: Award, number: "3x", label: "Campeão Brasileiro" },
+              { icon: Target, number: "4x", label: "Campeão Regional" },
+              { icon: Globe, number: "2x", label: "Campeão Mundial" },
+              { icon: Activity, number: "Atleta", label: "Natação" }, // Usando Activity
+              { icon: Gavel, number: "Árbitro", label: "Atletismo" }, // Usando Gavel
+              { icon: Gavel, number: "Árbitro", label: "Natação" }, // Usando Gavel
+            ].map((item, index) => (
+              <Card
+                key={index}
+                className="bg-black border-[#FF5C4D]/20 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
+              >
+                <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#FF5C4D] mx-auto mb-2 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+                <div className="text-xl sm:text-3xl font-bold text-[#FF5C4D] mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+                  {item.number}
+                </div>
+                <div className="text-xs sm:text-sm text-white/70 uppercase tracking-wide">{item.label}</div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-20 bg-black">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
+              ATENDIMENTO <span className="text-[#FF5C4D]">PERSONALIZADO</span>
+            </h2>
+            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
+              Escolha o formato que melhor se adapta à sua rotina
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4 sm:px-0">
+            <Card className="bg-white text-black p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
+                  💻
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold">CONSULTORIA ONLINE</h3>
+                <p className="text-black/70 text-sm sm:text-lg leading-relaxed">
+                  Acompanhamento remoto completo com ajustes semanais de treino, dieta e suplementação. Atendimento via
+                  WhatsApp com resposta em até 24h.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
+                  🤝
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold">PRESENCIAL</h3>
+                <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
+                  Sessões presenciais com avaliações físicas completas, ajustes em tempo real e acompanhamento
+                  personalizado no treino.
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-20 bg-zinc-950">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
               ESCOLHA SEU <span className="text-[#FF5C4D]">PLANO</span>
             </h2>
             <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
@@ -324,7 +398,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {[
-              // 1. Acompanhamento Farmacoterapêutico (R$ 130) - Menor preço absoluto
+              // 1. Acompanhamento Farmacoterapêutico (R$ 130)
               {
                 icon: "💊",
                 title: "Acompanhamento Farmacoterapêutico",
