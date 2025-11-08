@@ -24,7 +24,8 @@ import { useState, useEffect } from "react"
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
-  const [isPopupOpen, setIsPopupOpen] = useState(false)
+  const [isPopupOpen, setIsPopupOpen] = useState(false) // State for Checkout Modal
+  const [isLocationModalOpen, setIsLocationModalOpen] = useState(false) // NEW State for Location Modal
   const [checkoutUrl, setCheckoutUrl] = useState("https://app.primecoaching.com.br/checkout/11285")
   const [isIframeLoading, setIsIframeLoading] = useState(true) // State for iframe loading
   const [isScrolled, setIsScrolled] = useState(false) // State for scroll visibility
@@ -77,7 +78,8 @@ export default function Home() {
   }, [testimonials.length])
 
   useEffect(() => {
-    if (isPopupOpen) {
+    // Control body overflow when any modal is open
+    if (isPopupOpen || isLocationModalOpen) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "unset"
@@ -86,7 +88,7 @@ export default function Home() {
     return () => {
       document.body.style.overflow = "unset"
     }
-  }, [isPopupOpen])
+  }, [isPopupOpen, isLocationModalOpen])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,6 +117,16 @@ export default function Home() {
   const closePopup = () => {
     setIsPopupOpen(false)
     setIsIframeLoading(true)
+  }
+
+  // NEW Location Modal Handlers
+  const openLocationModal = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setIsLocationModalOpen(true)
+  }
+
+  const closeLocationModal = () => {
+    setIsLocationModalOpen(false)
   }
 
   return (
@@ -370,18 +382,21 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO */}
-            <Card className="bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer">
+            {/* CARD DE ATENDIMENTO PRESENCIAL REVISITADO COM NOVO ONCLICK */}
+            <Card 
+              className="bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer"
+              onClick={openLocationModal} // Abre o novo modal de localização
+            >
               <div className="space-y-3 sm:space-y-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  <MapPin className="h-8 w-8 text-[#FF5C4D]" /> {/* Novo ícone */}
+                  <MapPin className="h-8 w-8 text-[#FF5C4D]" />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold">ATENDIMENTO PRESENCIAL</h3>
                 <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
-                  Sessões presenciais de elite no **Spa Serra** (Sete Lagoas/MG). Avaliações físicas completas, ajustes em tempo real e acompanhamento personalizado no treino.
+                  Sessões presenciais exclusivas no **Spa Serra** (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
                 </p>
                 <p className="text-white/70 text-xs sm:text-sm font-semibold pt-2">
-                  📍 Local: Spa Serra - Av. Pref. Alberto Moura, 15671A
+                  Clique para ver o endereço completo
                 </p>
               </div>
             </Card>
@@ -688,6 +703,7 @@ export default function Home() {
         {/* Empty section, possibly for future content or spacing */}
       </section>
 
+      {/* MODAL DE CHECKOUT (EXISTENTE) */}
       {isPopupOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-[fadeIn_0.2s_ease-out]"
@@ -721,6 +737,47 @@ export default function Home() {
               allow="payment"
               onLoad={() => setIsIframeLoading(false)} // Set loading to false when iframe loads
             />
+          </div>
+        </div>
+      )}
+
+      {/* NOVO MODAL DE LOCALIZAÇÃO (BRANCO) */}
+      {isLocationModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-[fadeIn_0.2s_ease-out]"
+          onClick={closeLocationModal}
+        >
+          <div
+            className="relative w-full max-w-md bg-white text-black p-8 rounded-2xl shadow-2xl shadow-black/50 animate-[scaleUp_0.3s_ease-out]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeLocationModal}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 text-black flex items-center justify-center transition-all duration-200"
+              aria-label="Fechar"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="text-center space-y-6">
+              <MapPin className="h-10 w-10 text-[#FF5C4D] mx-auto" />
+              <h3 className="text-2xl font-bold text-black">Local de Atendimento Presencial</h3>
+              
+              <div className="bg-gray-100 p-4 rounded-lg border border-gray-200">
+                <p className="text-lg font-semibold text-gray-800">📍 Local: Spa Serra</p>
+                <p className="text-sm text-gray-600 mt-1">Av. Pref. Alberto Moura, 15671A</p>
+              </div>
+
+              <a
+                href="https://maps.app.goo.gl/pSv16HNW82Fzo9yh8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full bg-[#FF5C4D] hover:bg-[#FF5C4D]/90 text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.02] shadow-lg shadow-[#FF5C4D]/30"
+              >
+                <Navigation className="h-5 w-5" />
+                Ver Rota no Google Maps
+              </a>
+            </div>
           </div>
         </div>
       )}
