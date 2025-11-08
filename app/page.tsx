@@ -375,9 +375,9 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* CARD DE ATENDIMENTO PRESENCIAL - ADICIONANDO BORDA TRACEJADA */}
+            {/* CARD DE ATENDIMENTO PRESENCIAL */}
             <Card 
-              className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group border-dashed border-2 border-white/50"
+              className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
             >
               <div className="space-y-3 sm:space-y-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
@@ -455,7 +455,7 @@ export default function Home() {
                 url: "https://app.primecoaching.com.br/checkout/plan/21868",
                 highlight: false,
               },
-              // 4. Plano Anual (R$ 1.000) - Maior preço absoluto, mas melhor custo-benefício (mantido como destaque) - ADICIONANDO BORDA TRACEJADA
+              // 4. Plano Anual (R$ 1.000) - Maior preço absoluto, mas melhor custo-benefício (mantido como destaque)
               {
                 icon: "🏆",
                 title: "Plano Anual",
@@ -477,7 +477,7 @@ export default function Home() {
                 key={index}
                 className={`relative flex flex-col h-full ${
                   plan.highlight
-                    ? "bg-gradient-to-br from-[#FF5C4D] to-[#FF5C4D]/80 border-[#FF5C4D] scale-105 shadow-2xl shadow-[#FF5C4D]/50 border-dashed border-2 border-white/50" // Adicionado border-dashed
+                    ? "bg-gradient-to-br from-[#FF5C4D] to-[#FF5C4D]/80 border-[#FF5C4D] scale-105 shadow-2xl shadow-[#FF5C4D]/50"
                     : "bg-black border-[#FF5C4D]/30"
                 } p-6 sm:p-8 rounded-xl sm:rounded-2xl hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer group`}
               >
