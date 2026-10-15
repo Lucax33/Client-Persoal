@@ -118,6 +118,10 @@ export default function Home() {
     setIsIframeLoading(true)
   }
 
+  const scrollToPlans = () => {
+    document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
   // URL de destino robusta para rotas no Google Maps
   const mapsDestinationUrl = "https://www.google.com/maps/dir/?api=1&destination=Av.+Pref.+Alberto+Moura,+15671A,+Portal+da+Serra,+Sete+Lagoas,+MG,+35700-791,+Brazil"
 
@@ -179,7 +183,7 @@ export default function Home() {
               corpo que você sempre quis.
             </p>
             <button
-              onClick={(e) => openCheckout(e)}
+              onClick={scrollToPlans}
               className="inline-flex items-center justify-center bg-[#FF5C4D] hover:bg-[#FF5C4D]/90 text-white font-bold px-6 sm:px-8 md:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-full mt-6 sm:mt-8 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 animate-[slideUp_1.2s_ease-out] focus:outline-none focus:ring-4 focus:ring-[#FF5C4D]/50 min-h-[48px]"
             >
               QUERO COMEÇAR AGORA <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
@@ -363,14 +367,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 bg-zinc-950">
+      <section id="planos" className="scroll-mt-24 py-12 sm:py-20 bg-zinc-950">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
+          <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center sm:mb-12">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#FF5C4D]/60 bg-[#FF5C4D]/10 px-4 py-2 text-xs font-bold tracking-wide text-[#FF8A7F] shadow-[0_0_24px_rgba(255,92,77,0.18)] animate-pulse sm:text-sm">
+              <span className="size-2 rounded-full bg-[#FF5C4D] shadow-[0_0_10px_#FF5C4D]" aria-hidden="true" />
+              ÚLTIMAS VAGAS DISPONÍVEIS
+            </div>
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
               ESCOLHA SEU <span className="text-[#FF5C4D]">PLANO</span>
             </h2>
-            <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
+            <p className="mt-3 max-w-2xl px-4 text-sm text-white/70 sm:text-base md:text-lg">
               Invista na sua transformação com planos flexíveis e resultados garantidos
+            </p>
+            <p className="mt-4 text-sm font-semibold text-[#FF8A7F] sm:text-base">
+              Vagas limitadas para manter o acompanhamento realmente personalizado.
             </p>
           </div>
 
