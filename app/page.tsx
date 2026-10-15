@@ -193,46 +193,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-20 bg-zinc-950">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-              TREINAMENTO DE <span className="text-[#FF5C4D]">ELITE</span>
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto">
-              Método testado e aprovado por atletas de alto rendimento
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto">
-            {[
-              { src: "/training-pushup.png", label: "FORÇA" },
-              { src: "/training-pullup.png", label: "FUNCIONAL" },
-              { src: "/training-squat.png", label: "HIPERTROFIA" },
-              { src: "/training-outdoor.png", label: "PERFORMANCE" },
-              { src: "/training-flex.png", label: "DEFINIÇÃO" },
-              { src: "/training-rowing.png", label: "RESISTÊNCIA" },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="relative aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group cursor-pointer"
-              >
-                <Image
-                  src={item.src || "/placeholder.svg"}
-                  alt={`Treinamento ${item.label}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-hover:from-[#FF5C4D]/80 transition-all duration-500" />
-                <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-2 sm:left-3 md:left-4 text-white transform group-hover:scale-110 transition-transform duration-300">
-                  <div className="font-bold text-xs sm:text-sm md:text-base">{item.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-12 sm:py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
