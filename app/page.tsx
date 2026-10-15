@@ -124,39 +124,34 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
       {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
-      <div className="bg-[#FF5C4D] text-white py-5 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20 relative">
-        
+      <div className="relative sticky top-0 z-40 bg-[#FF5C4D] py-4 text-white shadow-lg shadow-[#FF5C4D]/30 sm:py-5">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[urgencySweep_3s_ease-in-out_infinite]" />
+
         {/* Logo Container (Absolute, flush left, FULL HEIGHT) */}
         <a
           href="#"
-          // top-0 h-full ensures the white background covers the orange completely
-          className="absolute left-0 top-0 h-full flex items-center bg-white px-3 z-10 transition-all duration-300 sm:shadow-md"
+          className="absolute left-0 top-0 z-10 flex h-full items-center bg-white px-3 transition-all duration-300 sm:shadow-md"
         >
           <Image
             src="/mr-logo-dark.png"
             alt="Márcio Rodrigues Farmacêutico Clínico"
             width={280}
             height={56}
-            // Reduced height on mobile (h-10) and kept h-14 for sm: and up
-            className="object-contain h-10 sm:h-14 w-auto"
+            className="h-10 w-auto object-contain sm:h-14"
             priority
           />
         </a>
 
-        {/* Text Container (Ensuring text never overlaps the logo) */}
-        <div className="max-w-7xl mx-auto flex items-center h-full">
-          
-          {/* Spacer for Logo on Mobile (w-56 = 224px) - Hidden on Desktop (sm:hidden) */}
-          <div className="w-56 flex-shrink-0 sm:hidden" />
-
-          {/* Text Content - Occupies remaining space, centered on mobile, centered on desktop */}
-          {/* Added px-2 for subtle breathing room on mobile, and text-center for perfect centering */}
-          <div className="flex-1 flex justify-center items-center px-2 sm:px-6 sm:text-center">
-            <span className="hidden sm:inline">
-              🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
+        <div className="relative mx-auto flex min-h-10 w-full items-center justify-center px-2 pl-56 text-center sm:min-h-14 sm:px-6 sm:pl-0">
+          <div className="flex items-center justify-center gap-2 font-semibold text-xs leading-tight sm:text-sm md:text-base">
+            <span className="relative flex size-2.5 shrink-0 sm:size-3" aria-hidden="true">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-75" />
+              <span className="relative inline-flex size-full rounded-full bg-white" />
             </span>
-            {/* Text for mobile is now centered in the remaining space */}
-            <span className="sm:hidden text-center">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
+            <span>
+              <span className="hidden sm:inline">🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado</span>
+              <span className="sm:hidden">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
+            </span>
           </div>
         </div>
       </div>
