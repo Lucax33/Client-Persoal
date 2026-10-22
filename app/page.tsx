@@ -5,10 +5,7 @@ import { Card } from "@/components/ui/card"
 import {
   ArrowRight,
   CheckCircle2,
-  Trophy,
   Award,
-  Target,
-  Globe,
   Calendar,
   MessageCircle,
   X,
@@ -16,8 +13,6 @@ import {
   Navigation,
   Clock,
   Loader2,
-  Activity, // Substituído Swimmer por Activity
-  Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -271,98 +266,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-zinc-950">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
-              <span className="text-[#FF5C4D]">CONQUISTAS</span> QUE INSPIRAM
-            </h2>
-          </div>
-
-          {/* Cards de Conquistas com borda tracejada */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-            {[
-              { icon: Trophy, number: "15", label: "Anos de boxe" },
-              { icon: Award, number: "3x", label: "Campeão Brasileiro" },
-              { icon: Target, number: "4x", label: "Campeão Regional" },
-              { icon: Globe, number: "2x", label: "Campeão Mundial" },
-              { icon: Activity, number: "Atleta", label: "Natação" }, // Usando Activity
-              { icon: Gavel, number: "Árbitro", label: "Atletismo" }, // Usando Gavel
-              { icon: Gavel, number: "Árbitro", label: "Natação" }, // Usando Gavel
-            ].map((item, index) => (
-              <Card
-                key={index}
-                // Adicionado border-dashed
-                className="bg-zinc-900 border-dashed border-2 border-[#FF5C4D]/30 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
-              >
-                <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#FF5C4D] mx-auto mb-2 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                <div className="text-xl sm:text-3xl font-bold text-[#FF5C4D] mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  {item.number}
-                </div>
-                <div className="text-xs sm:text-sm text-white/70 uppercase tracking-wide">{item.label}</div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-black">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
-              ATENDIMENTO <span className="text-[#FF5C4D]">PERSONALIZADO</span>
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
-              Escolha o formato que melhor se adapta à sua rotina
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4 sm:px-0">
-            <Card className="bg-white text-black p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  💻
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">CONSULTORIA ONLINE</h3>
-                <p className="text-black/70 text-sm sm:text-lg leading-relaxed">
-                  Acompanhamento remoto completo com ajustes semanais de treino, dieta e suplementação. Atendimento via
-                  WhatsApp com resposta em até 24h.
-                </p>
-              </div>
-            </Card>
-
-            {/* CARD DE ATENDIMENTO PRESENCIAL */}
-            <Card 
-              className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
-            >
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  <MapPin className="h-8 w-8 text-[#FF5C4D]" />
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">ATENDIMENTO PRESENCIAL</h3>
-                <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
-                  Sessões presenciais exclusivas no <span className="font-bold text-white">Spa Serra</span> (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
-                </p>
-                
-                {/* BOTÃO BOUNCING */}
-                <div className="pt-4">
-                  <a
-                    href={mapsDestinationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-[#FF5C4D] font-bold px-4 py-2 rounded-full text-xs sm:text-sm shadow-lg shadow-black/30 transition-all hover:scale-[1.05] animate-bounce"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <MapPin className="h-4 w-4" />
-                    VER ENDEREÇO (SPA SERRA)
-                  </a>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
