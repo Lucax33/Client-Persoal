@@ -129,7 +129,7 @@ export default function Home() {
         {/* Logo Container (Absolute, flush left, FULL HEIGHT) */}
         <a
           href="#"
-          className="absolute left-0 top-0 z-10 flex h-full items-center bg-white px-3 transition-all duration-300 sm:shadow-md"
+          className="absolute left-1/2 top-0 z-10 flex h-full -translate-x-1/2 items-center bg-white px-3 transition-all duration-300 sm:left-0 sm:translate-x-0 sm:shadow-md"
         >
           <Image
             src="/mr-logo-dark.png"
