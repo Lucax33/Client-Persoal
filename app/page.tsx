@@ -149,7 +149,6 @@ export default function Home() {
             </span>
             <span>
               <span className="hidden sm:inline">🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado</span>
-              <span className="sm:hidden">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
             </span>
           </div>
         </div>
