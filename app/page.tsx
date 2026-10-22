@@ -5,10 +5,7 @@ import { Card } from "@/components/ui/card"
 import {
   ArrowRight,
   CheckCircle2,
-  Trophy,
   Award,
-  Target,
-  Globe,
   Calendar,
   MessageCircle,
   X,
@@ -16,11 +13,10 @@ import {
   Navigation,
   Clock,
   Loader2,
-  Activity, // Substituído Swimmer por Activity
-  Gavel, // Substituído Whistle por Gavel
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -118,45 +114,48 @@ export default function Home() {
     setIsIframeLoading(true)
   }
 
+  const scrollToPlans = () => {
+    document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
   // URL de destino robusta para rotas no Google Maps
   const mapsDestinationUrl = "https://www.google.com/maps/dir/?api=1&destination=Av.+Pref.+Alberto+Moura,+15671A,+Portal+da+Serra,+Sete+Lagoas,+MG,+35700-791,+Brazil"
 
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
       {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
-      <div className="bg-[#FF5C4D] text-white py-5 font-semibold text-xs sm:text-sm md:text-base sticky top-0 z-40 shadow-lg shadow-[#FF5C4D]/20 relative">
-        
+      <div
+        className={cn(
+          "relative sticky top-0 z-40 bg-[#FF5C4D] py-4 text-white shadow-lg shadow-[#FF5C4D]/30 transition-all duration-500 ease-out sm:py-5",
+          isScrolled ? "pointer-events-none -translate-y-6 opacity-0" : "translate-y-0 opacity-100",
+        )}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[urgencySweep_3s_ease-in-out_infinite]" />
+
         {/* Logo Container (Absolute, flush left, FULL HEIGHT) */}
         <a
           href="#"
-          // top-0 h-full ensures the white background covers the orange completely
-          className="absolute left-0 top-0 h-full flex items-center bg-white px-3 z-10 transition-all duration-300 sm:shadow-md"
+          className="absolute left-1/2 top-0 z-10 flex h-full -translate-x-1/2 items-center bg-white px-3 transition-all duration-300 sm:left-0 sm:translate-x-0 sm:shadow-md"
         >
           <Image
             src="/mr-logo-dark.png"
             alt="Márcio Rodrigues Farmacêutico Clínico"
             width={280}
             height={56}
-            // Reduced height on mobile (h-10) and kept h-14 for sm: and up
-            className="object-contain h-10 sm:h-14 w-auto"
+            className="h-10 w-auto object-contain sm:h-14"
             priority
           />
         </a>
 
-        {/* Text Container (Ensuring text never overlaps the logo) */}
-        <div className="max-w-7xl mx-auto flex items-center h-full">
-          
-          {/* Spacer for Logo on Mobile (w-56 = 224px) - Hidden on Desktop (sm:hidden) */}
-          <div className="w-56 flex-shrink-0 sm:hidden" />
-
-          {/* Text Content - Occupies remaining space, centered on mobile, centered on desktop */}
-          {/* Added px-2 for subtle breathing room on mobile, and text-center for perfect centering */}
-          <div className="flex-1 flex justify-center items-center px-2 sm:px-6 sm:text-center">
-            <span className="hidden sm:inline">
-              🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado
+        <div className="relative mx-auto flex min-h-10 w-full items-center justify-center px-2 pl-56 text-center sm:min-h-14 sm:px-6 sm:pl-0">
+          <div className="flex items-center justify-center gap-2 font-semibold text-xs leading-tight sm:text-sm md:text-base">
+            <span className="relative flex size-2.5 shrink-0 sm:size-3" aria-hidden="true">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-75" />
+              <span className="relative inline-flex size-full rounded-full bg-white" />
             </span>
-            {/* Text for mobile is now centered in the remaining space */}
-            <span className="sm:hidden text-center">🔥 VAGAS LIMITADAS: 10 vagas este mês</span>
+            <span>
+              <span className="hidden sm:inline">🔥 VAGAS LIMITADAS: Apenas 10 vagas disponíveis este mês para acompanhamento personalizado</span>
+            </span>
           </div>
         </div>
       </div>
@@ -184,51 +183,11 @@ export default function Home() {
               corpo que você sempre quis.
             </p>
             <button
-              onClick={(e) => openCheckout(e)}
+              onClick={scrollToPlans}
               className="inline-flex items-center justify-center bg-[#FF5C4D] hover:bg-[#FF5C4D]/90 text-white font-bold px-6 sm:px-8 md:px-10 py-4 sm:py-5 text-base sm:text-lg rounded-full mt-6 sm:mt-8 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 animate-[slideUp_1.2s_ease-out] focus:outline-none focus:ring-4 focus:ring-[#FF5C4D]/50 min-h-[48px]"
             >
               QUERO COMEÇAR AGORA <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
             </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16 md:py-20 bg-zinc-950">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-              TREINAMENTO DE <span className="text-[#FF5C4D]">ELITE</span>
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto">
-              Método testado e aprovado por atletas de alto rendimento
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto">
-            {[
-              { src: "/training-pushup.png", label: "FORÇA" },
-              { src: "/training-pullup.png", label: "FUNCIONAL" },
-              { src: "/training-squat.png", label: "HIPERTROFIA" },
-              { src: "/training-outdoor.png", label: "PERFORMANCE" },
-              { src: "/training-flex.png", label: "DEFINIÇÃO" },
-              { src: "/training-rowing.png", label: "RESISTÊNCIA" },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="relative aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group cursor-pointer"
-              >
-                <Image
-                  src={item.src || "/placeholder.svg"}
-                  alt={`Treinamento ${item.label}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-hover:from-[#FF5C4D]/80 transition-all duration-500" />
-                <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-2 sm:left-3 md:left-4 text-white transform group-hover:scale-110 transition-transform duration-300">
-                  <div className="font-bold text-xs sm:text-sm md:text-base">{item.label}</div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -316,106 +275,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 bg-zinc-950">
+      <section id="planos" className="scroll-mt-24 py-12 sm:py-20 bg-zinc-950">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
-              <span className="text-[#FF5C4D]">CONQUISTAS</span> QUE INSPIRAM
-            </h2>
-          </div>
-
-          {/* Cards de Conquistas com borda tracejada */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-            {[
-              { icon: Trophy, number: "15", label: "Anos de boxe" },
-              { icon: Award, number: "3x", label: "Campeão Brasileiro" },
-              { icon: Target, number: "4x", label: "Campeão Regional" },
-              { icon: Globe, number: "2x", label: "Campeão Mundial" },
-              { icon: Activity, number: "Atleta", label: "Natação" }, // Usando Activity
-              { icon: Gavel, number: "Árbitro", label: "Atletismo" }, // Usando Gavel
-              { icon: Gavel, number: "Árbitro", label: "Natação" }, // Usando Gavel
-            ].map((item, index) => (
-              <Card
-                key={index}
-                // Adicionado border-dashed
-                className="bg-zinc-900 border-dashed border-2 border-[#FF5C4D]/30 p-4 sm:p-8 rounded-xl sm:rounded-2xl text-center hover:border-[#FF5C4D] hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/30 transition-all duration-500 cursor-pointer group"
-              >
-                <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#FF5C4D] mx-auto mb-2 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                <div className="text-xl sm:text-3xl font-bold text-[#FF5C4D] mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-                  {item.number}
-                </div>
-                <div className="text-xs sm:text-sm text-white/70 uppercase tracking-wide">{item.label}</div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-black">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
-              ATENDIMENTO <span className="text-[#FF5C4D]">PERSONALIZADO</span>
-            </h2>
-            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
-              Escolha o formato que melhor se adapta à sua rotina
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4 sm:px-0">
-            <Card className="bg-white text-black p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  💻
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">CONSULTORIA ONLINE</h3>
-                <p className="text-black/70 text-sm sm:text-lg leading-relaxed">
-                  Acompanhamento remoto completo com ajustes semanais de treino, dieta e suplementação. Atendimento via
-                  WhatsApp com resposta em até 24h.
-                </p>
-              </div>
-            </Card>
-
-            {/* CARD DE ATENDIMENTO PRESENCIAL */}
-            <Card 
-              className="relative bg-[#FF5C4D] text-white p-6 sm:p-10 rounded-xl sm:rounded-2xl border-0 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF5C4D]/50 transition-all duration-500 cursor-pointer group"
-            >
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-2xl sm:text-3xl hover:rotate-12 transition-transform duration-300">
-                  <MapPin className="h-8 w-8 text-[#FF5C4D]" />
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold">ATENDIMENTO PRESENCIAL</h3>
-                <p className="text-white/90 text-sm sm:text-lg leading-relaxed">
-                  Sessões presenciais exclusivas no <span className="font-bold text-white">Spa Serra</span> (Sete Lagoas/MG). Avaliações físicas completas, ajustes imediatos e acompanhamento personalizado para maximizar cada treino.
-                </p>
-                
-                {/* BOTÃO BOUNCING */}
-                <div className="pt-4">
-                  <a
-                    href={mapsDestinationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-[#FF5C4D] font-bold px-4 py-2 rounded-full text-xs sm:text-sm shadow-lg shadow-black/30 transition-all hover:scale-[1.05] animate-bounce"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <MapPin className="h-4 w-4" />
-                    VER ENDEREÇO (SPA SERRA)
-                  </a>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-zinc-950">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
+          <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center sm:mb-12">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#FF5C4D]/60 bg-[#FF5C4D]/10 px-4 py-2 text-xs font-bold tracking-wide text-[#FF8A7F] shadow-[0_0_24px_rgba(255,92,77,0.18)] animate-pulse sm:text-sm">
+              <span className="size-2 rounded-full bg-[#FF5C4D] shadow-[0_0_10px_#FF5C4D]" aria-hidden="true" />
+              ÚLTIMAS VAGAS DISPONÍVEIS
+            </div>
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
               ESCOLHA SEU <span className="text-[#FF5C4D]">PLANO</span>
             </h2>
-            <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
+            <p className="mt-3 max-w-2xl px-4 text-sm text-white/70 sm:text-base md:text-lg">
               Invista na sua transformação com planos flexíveis e resultados garantidos
+            </p>
+            <p className="mt-4 text-sm font-semibold text-[#FF8A7F] sm:text-base">
+              Vagas limitadas para manter o acompanhamento realmente personalizado.
             </p>
           </div>
 
