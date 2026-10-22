@@ -16,6 +16,7 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -123,7 +124,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white scroll-smooth">
       {/* BANNER REFACTOR: Absolute positioning for flush left logo, removed main padding */}
-      <div className="relative sticky top-0 z-40 bg-[#FF5C4D] py-4 text-white shadow-lg shadow-[#FF5C4D]/30 sm:py-5">
+      <div
+        className={cn(
+          "relative sticky top-0 z-40 bg-[#FF5C4D] py-4 text-white shadow-lg shadow-[#FF5C4D]/30 transition-all duration-500 ease-out sm:py-5",
+          isScrolled ? "pointer-events-none -translate-y-6 opacity-0" : "translate-y-0 opacity-100",
+        )}
+      >
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[urgencySweep_3s_ease-in-out_infinite]" />
 
         {/* Logo Container (Absolute, flush left, FULL HEIGHT) */}
