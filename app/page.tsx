@@ -104,6 +104,12 @@ export default function Home() {
             <br />
             📍 SL•BH
           </p>
+          <a
+            href="#planos"
+            className="mt-2 inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-full border border-[#D6A83A]/70 bg-[#D6A83A]/10 px-5 py-3 text-sm font-bold text-[#D6A83A] transition-all hover:-translate-y-0.5 hover:bg-[#D6A83A] hover:text-[#081A2D] focus:outline-none focus:ring-4 focus:ring-[#D6A83A]/30 sm:w-auto"
+          >
+            Conheça nosso acompanhamento completo
+          </a>
         </section>
 
         <section aria-labelledby="ebook-title" className="mx-auto w-full max-w-4xl">
