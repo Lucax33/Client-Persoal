@@ -110,14 +110,13 @@ export default function Home() {
                     <span className="text-xs uppercase tracking-wide text-white/50">Acesso digital</span>
                     <span className="text-3xl font-bold text-[#D6A83A]">R$ 51,90</span>
                   </div>
-                  <a
-                    href="https://pay.primecoaching.com.br/HPN48tnscU"
-                    target="_blank"
-                    rel="noreferrer"
+                  <button
+                    type="button"
+                    onClick={(event) => openCheckout(event, "https://pay.primecoaching.com.br/HPN48tnscU")}
                     className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-[#D6A83A] px-6 py-4 text-sm font-bold text-[#081A2D] transition-transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-[#D6A83A]/40 sm:text-base"
                   >
                     Comprar ebook
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
