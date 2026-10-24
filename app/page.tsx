@@ -83,6 +83,11 @@ export default function Home() {
     <main className="min-h-screen bg-black px-4 py-10 text-white sm:px-6 sm:py-16">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 sm:gap-16">
         <section aria-labelledby="professional-name" className="mx-auto flex w-full max-w-3xl flex-col items-center gap-3 text-center">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PD7E0sSW20RXVVP8AO9rEu5djNRKdm.png"
+            alt="Dr. Majorowa, profissional de saúde e personal"
+            className="size-28 rounded-full border-2 border-[#D6A83A]/70 object-cover shadow-xl shadow-black/40 sm:size-36"
+          />
           <h1 id="professional-name" className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             dr.majorowa
           </h1>
