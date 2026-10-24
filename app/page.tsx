@@ -108,8 +108,8 @@ export default function Home() {
 
         <section aria-labelledby="ebook-title" className="mx-auto w-full max-w-4xl">
           <Card className="overflow-hidden rounded-2xl border border-[#D6A83A]/40 bg-[#081A2D] shadow-2xl shadow-black/30">
-            <div className="flex items-center gap-3 p-3 sm:grid sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8">
-              <div className="w-16 shrink-0 overflow-hidden rounded-lg border border-[#D6A83A]/50 bg-[#0B223C] shadow-xl shadow-black/30 sm:mx-auto sm:w-full sm:max-w-[220px] sm:rounded-xl">
+            <div className="flex items-center gap-4 p-4 sm:grid sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8">
+              <div className="w-20 shrink-0 overflow-hidden rounded-lg border border-[#D6A83A]/50 bg-[#0B223C] shadow-xl shadow-black/30 sm:mx-auto sm:w-full sm:max-w-[220px] sm:rounded-xl">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4HXUo3bGK268w958OHnUW0wjauKKhE.png"
                   alt="Capa do ebook Guia Completo de Farmácia Esportiva"
