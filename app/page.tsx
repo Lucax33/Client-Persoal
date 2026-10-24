@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useEffect, useState } from "react"
-import { Award, CheckCircle2, Loader2, X } from "lucide-react"
+import { Award, BookOpen, CheckCircle2, Loader2, X } from "lucide-react"
 import { Card } from "@/components/ui/card"
 
 const plans = [
@@ -82,6 +82,77 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black px-4 py-10 text-white sm:px-6 sm:py-16">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 sm:gap-16">
+        <section aria-labelledby="professional-name" className="mx-auto flex w-full max-w-3xl flex-col items-center gap-3 text-center">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PD7E0sSW20RXVVP8AO9rEu5djNRKdm.png"
+            alt="Dr. Majorowa, profissional de saúde e personal"
+            className="size-28 rounded-full border-2 border-[#D6A83A]/70 object-cover shadow-xl shadow-black/40 sm:size-36"
+          />
+          <h1 id="professional-name" className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            dr.majorowa
+          </h1>
+          <p className="max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+            💊 Farmacêutico • Químico • Personal
+            <br />
+            🩺 Clínico • Oncológico • Esteta
+            <br />
+            🎓 RQE 18049-10
+            <br />
+            📋 CRF-MG 54033 | CREF-MG 019821
+            <br />
+            🧪 CRQ-MG 02408773
+            <br />
+            📍 SL•BH
+          </p>
+          <a
+            href="#planos"
+            className="mt-2 inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-full border border-[#D6A83A]/70 bg-[#D6A83A]/10 px-5 py-3 text-sm font-bold text-[#D6A83A] transition-all hover:-translate-y-0.5 hover:bg-[#D6A83A] hover:text-[#081A2D] focus:outline-none focus:ring-4 focus:ring-[#D6A83A]/30 sm:w-auto"
+          >
+            Conheça nosso acompanhamento completo
+          </a>
+        </section>
+
+        <section aria-labelledby="ebook-title" className="mx-auto w-full max-w-4xl">
+          <Card className="overflow-hidden rounded-2xl border border-[#D6A83A]/40 bg-[#081A2D] shadow-2xl shadow-black/30">
+            <div className="grid items-center gap-8 p-5 sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8">
+              <div className="mx-auto w-full max-w-[220px] overflow-hidden rounded-xl border border-[#D6A83A]/50 bg-[#0B223C] shadow-xl shadow-black/30">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4HXUo3bGK268w958OHnUW0wjauKKhE.png"
+                  alt="Capa do ebook Guia Completo de Farmácia Esportiva"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col items-center gap-5 text-center sm:items-start sm:text-left">
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-center gap-2 text-[#D6A83A] sm:justify-start">
+                    <BookOpen className="size-5" aria-hidden="true" />
+                    <span className="text-xs font-bold uppercase tracking-[0.18em]">Ebook digital</span>
+                  </div>
+                  <h2 id="ebook-title" className="text-2xl font-bold leading-tight text-white sm:text-3xl">
+                    Guia Completo de Farmácia Esportiva
+                  </h2>
+                  <p className="text-sm leading-relaxed text-white/70 sm:text-base">
+                    Suplementos, medicamentos, hormônios, nutrição, exames, antidoping e segurança.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-xs uppercase tracking-wide text-white/50">Acesso digital</span>
+                    <span className="text-3xl font-bold text-[#D6A83A]">R$ 51,90</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={(event) => openCheckout(event, "https://pay.primecoaching.com.br/HPN48tnscU")}
+                    className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-[#D6A83A] px-6 py-4 text-sm font-bold text-[#081A2D] transition-transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-[#D6A83A]/40 sm:text-base"
+                  >
+                    Comprar ebook
+                  </button>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </section>
+
         <section id="planos" className="scroll-mt-8">
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:gap-6 md:grid-cols-3">
             {plans.map((plan) => (
