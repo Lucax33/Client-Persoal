@@ -108,15 +108,15 @@ export default function Home() {
 
         <section aria-labelledby="ebook-title" className="mx-auto w-full max-w-4xl">
           <Card className="overflow-hidden rounded-2xl border border-[#D6A83A]/40 bg-[#081A2D] shadow-2xl shadow-black/30">
-            <div className="grid items-center gap-8 p-5 sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8">
-              <div className="mx-auto w-full max-w-[220px] overflow-hidden rounded-xl border border-[#D6A83A]/50 bg-[#0B223C] shadow-xl shadow-black/30">
+            <div className="flex items-center gap-3 p-3 sm:grid sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8">
+              <div className="w-16 shrink-0 overflow-hidden rounded-lg border border-[#D6A83A]/50 bg-[#0B223C] shadow-xl shadow-black/30 sm:mx-auto sm:w-full sm:max-w-[220px] sm:rounded-xl">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4HXUo3bGK268w958OHnUW0wjauKKhE.png"
                   alt="Capa do ebook Guia Completo de Farmácia Esportiva"
                   className="h-auto w-full object-contain"
                 />
               </div>
-              <div className="flex flex-col items-center gap-5 text-center sm:items-start sm:text-left">
+              <div className="flex min-w-0 flex-1 flex-col items-start gap-3 text-left sm:items-start sm:gap-5">
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center justify-center gap-2 text-[#D6A83A] sm:justify-start">
                     <BookOpen className="size-5" aria-hidden="true" />
