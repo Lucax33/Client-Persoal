@@ -82,6 +82,25 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black px-4 py-10 text-white sm:px-6 sm:py-16">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 sm:gap-16">
+        <section aria-labelledby="professional-name" className="mx-auto flex w-full max-w-3xl flex-col items-center gap-3 text-center">
+          <h1 id="professional-name" className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            dr.majorowa
+          </h1>
+          <p className="max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+            💊 Farmacêutico • Químico • Personal
+            <br />
+            🩺 Clínico • Oncológico • Esteta
+            <br />
+            🎓 RQE 18049-10
+            <br />
+            📋 CRF-MG 54033 | CREF-MG 019821
+            <br />
+            🧪 CRQ-MG 02408773
+            <br />
+            📍 SL•BH
+          </p>
+        </section>
+
         <section aria-labelledby="ebook-title" className="mx-auto w-full max-w-4xl">
           <Card className="overflow-hidden rounded-2xl border border-[#D6A83A]/40 bg-[#081A2D] shadow-2xl shadow-black/30">
             <div className="grid items-center gap-8 p-5 sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8">
